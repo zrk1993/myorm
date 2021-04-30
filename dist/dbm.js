@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mysql = require("mysql");
 const sqlstring = require("sqlstring");
 const _1 = require(".");
+const error_1 = require("./error");
 class DBM {
     constructor(poolConfig) {
         this.logger = console;
@@ -26,6 +27,7 @@ class DBM {
                 this.logger.error('soul-dbm: ', error.message);
             }
             else {
+                error_1.default(this);
                 this.logger.info('数据库' + poolConfig.database + '连接成功！');
             }
         });
