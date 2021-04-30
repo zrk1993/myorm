@@ -1,7 +1,6 @@
 import * as mysql from 'mysql';
 import * as sqlstring from 'sqlstring';
 import { QueryBuilder, Tx, reCartesian } from '.';
-
 export class DBM {
   private logger = console;
   private isDebug = false;
